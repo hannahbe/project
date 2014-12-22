@@ -10,14 +10,78 @@
  Tags:         black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
 */
 
+html {
+}
+
 body {
 }
 
-#page {
-    width: 100%;
+.admin-bar.masthead-fixed .site-header {
+		top: 0px;
+	}
+
+#masthead.site-header {
+    background-color: #30302f;
+    max-width: 1349px;
+    display:  flexbox;
+    margin: 0 0 0 0;
+    height: 70px;
+    vertical-align: middle;
 }
 
-#masthead {
+#masthead.site-header img {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#masthead.site-header nav {
+   line-height: 70px;
+}
+
+.header-main {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#main.site-main {
+    margin-top: 0;
+}
+
+#primary.content-area {
+    padding-top:  0;
+}
+
+#content.site-content {
+    display: flexbox;
+    background-color: #94cecf;
+}
+
+#content2.site-content {
     background-color: #30302f;
-    width: max-content;
+    height: 200px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.site-content {
+    margin-left: 0;
+    display:  flexbox;
+    max-width: 1349px;
+}
+
+.pds {
+    width: 33%;
+    margin-top: 20px;
+}
+
+#print {
+    float: left;
+}
+
+#sublimation {
+    float: right;
+}
+
+#design {
+    display: inline-block;
 }

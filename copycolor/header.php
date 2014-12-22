@@ -24,11 +24,11 @@
     </head>
 
     <body <?php body_class(); ?>>
-    <div id="page" class="hfeed site">
+    <div id="page">
 
         <header id="masthead" class="site-header" role="banner">
 		<div class="header-main">
-			<img src="images/logo.png" alt="Copy Color Jerusalem">
+            <img src="<?php echo get_stylesheet_directory_uri() ?>/images/logo.png" alt="Copy Color Jerusalem"/>
 
 			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
 				<button class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></button>
