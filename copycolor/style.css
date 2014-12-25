@@ -10,19 +10,13 @@
  Tags:         black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
 */
 
-html {
-}
-
-body {
-}
-
 .admin-bar.masthead-fixed .site-header {
 		top: 0px;
 	}
 
 #masthead.site-header {
     background-color: #30302f;
-    max-width: 1349px;
+    max-width: none;
     display:  flexbox;
     margin: 0 0 0 0;
     height: 70px;
@@ -58,20 +52,26 @@ body {
 
 #content2.site-content {
     background-color: #30302f;
-    height: 200px;
-    padding-left: 20%;
-    padding-right: 20%;
+    height: 40%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .site-content {
     margin-left: 0;
     display:  flexbox;
-    max-width: 1349px;
 }
 
 .pds {
+    margin-top: 1%;
+    margin-bottom: 1%;
     width: 33%;
-    margin-top: 20px;
+}
+
+.pds img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #print {
