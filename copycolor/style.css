@@ -10,9 +10,15 @@
  Tags:         black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
 */
 
-.admin-bar.masthead-fixed .site-header {
+@import url("../twentyfourteen/style.css");
+
+/*.admin-bar.masthead-fixed .site-header {
 		top: 0px;
-	}
+	}*/
+
+html {
+    background-color: white;
+}
 
 #masthead.site-header {
     background-color: #30302f;
@@ -26,10 +32,32 @@
 #masthead.site-header img {
     padding-top: 10px;
     padding-bottom: 10px;
+    max-height: 50px;
+    width: auto;
 }
 
 #masthead.site-header nav {
    line-height: 70px;
+}
+
+.primary-navigation ul li {
+    background-color: #30302f;
+}
+
+.primary-navigation li:hover > a,
+.primary-navigation li.focus > a,
+.primary-navigation ul ul a:hover,
+.primary-navigation ul ul li.focus > a {
+    border-bottom: 5px solid #00dbff;
+    background-color: #30302f;
+}
+
+.site-navigation .current_page_item > a,
+.site-navigation .current_page_ancestor > a,
+.site-navigation .current-menu-item > a,
+.site-navigation .current-menu-ancestor > a {
+	color: #00dbff;
+	font-weight: 900;
 }
 
 .header-main {
@@ -39,6 +67,9 @@
 
 #main.site-main {
     margin-top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 #primary.content-area {
@@ -70,8 +101,8 @@
 
 .pds img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    margin-top: 15%;
 }
 
 #print {
@@ -84,4 +115,69 @@
 
 #design {
     display: inline-block;
+}
+
+.catalog-content {
+    margin-top: 50px;
+    background-color: white;
+    display: flexbox;
+    height: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+    max-height: none;
+}
+
+.catalog-section {
+    margin-top: 50px;
+    margin-left: 20px;
+    vertical-align: middle;
+    display: table;
+    width: 100%;
+}
+
+.catalog-section h1{
+    margin: 0;
+    vertical-align: middle;
+    display: table-cell;
+    font-size: 400%;
+    color: #30302f;
+}
+
+.catalog-posts {
+    max-height: none;
+    display: table;
+    border-spacing: 20px;
+    border-collapse: separate;
+}
+
+.catalog-posts-row {
+    display: table-row;
+}
+
+.single-catalog-post {
+    padding: 10px;
+    display: table-cell;
+    border-color: #ebebeb;
+    border-width: 2px;
+    border-style: double;
+}
+
+.single-catalog-post h2 {
+    color: #308568;
+    margin: 0;
+    font-size: 100%;
+}
+
+.single-catalog-post p {
+    color: black;
+    text-align: left;
+    margin: 0;
+    margin-top: 15px;
+    font-size: 80%;
+}
+
+.single-catalog-post img {
+    max-height: 150px;
+    width: auto;
+    max-width: 100%;
 }
