@@ -27,6 +27,8 @@ html {
     margin: 0 0 0 0;
     height: 70px;
     vertical-align: middle;
+    position: absolute;
+    top: 32px;
 }
 
 #masthead.site-header img {
@@ -67,9 +69,8 @@ html {
 
 #main.site-main {
     margin-top: 0;
-    position: absolute;
     width: 100%;
-    height: 100%;
+    max-height: none;
 }
 
 #primary.content-area {
@@ -84,8 +85,8 @@ html {
 #content2.site-content {
     background-color: #30302f;
     height: 40%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 .site-content {
@@ -100,6 +101,7 @@ html {
 }
 
 .pds img {
+    width: 90%;
     display: block;
     margin: auto;
     margin-top: 15%;
@@ -117,13 +119,29 @@ html {
     display: inline-block;
 }
 
+/***** CATALOG *****/
+
+.back-to-section {
+    float: left;
+    width: 15%;
+    max-height: none;
+}
+
+.forward-to-section {
+    float: right;
+    width: 15%;
+    max-height: none;
+}
+
 .catalog-content {
-    margin-top: 50px;
+    display: inline-block;
+    padding-top: 50px;
     background-color: white;
-    display: flexbox;
-    height: 100%;
+    float: left;
+    width: 60%;
     padding-left: 20%;
     padding-right: 20%;
+    min-height: 500px;
     max-height: none;
 }
 
@@ -181,3 +199,64 @@ html {
     width: auto;
     max-width: 100%;
 }
+
+
+
+.bla {
+    width: 100%;
+}
+
+/***** END OF CATALOG *****/
+
+/***** FOOTER *****/
+
+/*color of the footer is black, no superposition*/
+#colophon {
+    background-color: white;
+    z-index: none;
+    clear: both;
+    display: flexbox;
+}
+
+/*this is where the company informations are displayed*/
+.site-info {
+    text-align: center;
+    color: black;
+}
+
+/*the footer menu*/
+#nav_menu-3 {
+    position: relative;
+    margin-left: 30%;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    width:auto;
+    border-bottom-style: solid;
+    border-bottom-color: #808080;
+    border-bottom-width: 2px;
+}
+
+/*the pages titles*/
+#nav_menu-3 .menu-copy-color-menu-container ul li a {
+    color: black;
+}
+
+/*the pages titles*/
+#menu-copy-color-menu-1 li {
+    display: inline;
+    float: left;
+    width: 100px;
+}
+
+/*the subpages titles*/
+#menu-copy-color-menu-1 .sub-menu li {
+    display: block;
+    float: none;
+}
+
+/*the subpages titles*/
+#nav_menu-3 .menu-copy-color-menu-container ul li ul li a {
+    color: #808080;
+}
+
+/***** END OF FOOTER *****/

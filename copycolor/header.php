@@ -1,6 +1,11 @@
 <?php
+/**
+ * The template for displaying the header
+ * Contains header content and the opening of the #main and #page div elements.
+ */
+?>
 
-?>?><!DOCTYPE html>
+?><!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
@@ -27,16 +32,19 @@
     <div id="page">
 
         <header id="masthead" class="site-header" role="banner">
-		<div class="header-main">
-            <img src="<?php echo get_theme_mod('logo'); ?>" alt="Copy Color jerusalem">
-			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-			</nav>
-		</div>
 
-	</header><!-- #masthead -->
+		    <div class="header-main">
+                <!-- Get the logo that user chose in customizer: -->
+                <img src="<?php echo get_theme_mod('logo'); ?>" alt="Copy Color Jerusalem">
+                <!-- The primary menu: -->
+			    <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+			    </nav>
+		    </div><!-- .header-main -->
 
-    <div id="main" class="site-main">
+	    </header><!-- #masthead -->
+
+        <div id="main" class="site-main">
         
     <!-- </body> -->
 <!-- </html> -->
