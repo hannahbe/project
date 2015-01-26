@@ -18,12 +18,13 @@
 
 html {
     background-color: white;
+    min-width: 1150px;
 }
 
 #masthead.site-header {
     background-color: #30302f;
     max-width: none;
-    display:  flexbox;
+    min-width: 1150px;
     margin: 0 0 0 0;
     height: 70px;
     vertical-align: middle;
@@ -43,6 +44,10 @@ html {
 }
 
 .primary-navigation ul li {
+background-color: #30302f;
+}
+ 
+#primary-navigation {
     background-color: #30302f;
 }
 
@@ -121,28 +126,29 @@ html {
 
 /***** CATALOG *****/
 
-.back-to-section {
-    float: left;
-    width: 15%;
-    max-height: none;
+.move-to-section {
+    margin-top: 350px;
+    min-width: 150px;
 }
 
-.forward-to-section {
+#back-to-section {
+    float: left;
+}
+
+#forward-to-section {
     float: right;
-    width: 15%;
-    max-height: none;
+}
+
+#forward-to-section a img {
+    float: right;
 }
 
 .catalog-content {
-    display: inline-block;
     padding-top: 50px;
-    background-color: white;
-    float: left;
-    width: 60%;
-    padding-left: 20%;
-    padding-right: 20%;
     min-height: 500px;
     max-height: none;
+    margin: auto;
+    width: 850px;
 }
 
 .catalog-section {
@@ -154,6 +160,7 @@ html {
 }
 
 .catalog-section h1{
+    width: 850px;
     margin: 0;
     vertical-align: middle;
     display: table-cell;
@@ -198,12 +205,6 @@ html {
     max-height: 150px;
     width: auto;
     max-width: 100%;
-}
-
-
-
-.bla {
-    width: 100%;
 }
 
 /***** END OF CATALOG *****/
