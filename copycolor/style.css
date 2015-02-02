@@ -21,6 +21,9 @@ html {
     min-width: 1150px;
 }
 
+/***** HEADER *****/
+
+/* the header */
 #masthead.site-header {
     background-color: #30302f;
     max-width: none;
@@ -32,6 +35,12 @@ html {
     top: 32px;
 }
 
+.header-main {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+/* logo on the left side of the header*/
 #masthead.site-header img {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -39,18 +48,21 @@ html {
     width: auto;
 }
 
+/* center vertically the navigation */
 #masthead.site-header nav {
    line-height: 70px;
 }
 
+/* subpages navigation 
 .primary-navigation ul li {
 background-color: #30302f;
-}
- 
-#primary-navigation {
+}*/
+
+.primary-navigation ul ul {
     background-color: #30302f;
 }
-
+    
+/* what happens when the user put the mouse on the menu */
 .primary-navigation li:hover > a,
 .primary-navigation li.focus > a,
 .primary-navigation ul ul a:hover,
@@ -67,10 +79,75 @@ background-color: #30302f;
 	font-weight: 900;
 }
 
-.header-main {
-    margin: 0 auto;
-    width: 1000px;
+/***** END OF HEADER *****/
+
+/*******************************************************************************************************/
+
+/***** FOOTER *****/
+
+/*color of the footer is black, no superposition*/
+#colophon {
+    background-color: white;
+    z-index: none;
+    clear: both;
+    display: flexbox;
 }
+
+/*this is where the company informations are displayed*/
+.site-info {
+    text-align: center;
+    color: black;
+}
+
+.site-info h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+/*the footer menu*/
+#nav_menu-3 {
+    position: relative;
+    margin-left: 30%;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    width:auto;
+    border-bottom-style: solid;
+    border-bottom-color: #808080;
+    border-bottom-width: 2px;
+}
+
+/*the pages titles*/
+#nav_menu-3 .menu-copy-color-menu-container ul li a {
+    color: black;
+}
+
+/*the pages titles*/
+#menu-copy-color-menu-1 li {
+    display: inline;
+    float: left;
+    width: 100px;
+}
+
+/*the subpages titles*/
+#menu-copy-color-menu-1 .sub-menu li {
+    display: block;
+    float: none;
+}
+
+/*the subpages titles*/
+#nav_menu-3 .menu-copy-color-menu-container ul li ul li a {
+    color: #808080;
+}
+
+/***** END OF FOOTER *****/
+
+/*******************************************************************************************************/
+
+/***** MAIN PAGE *****/
 
 #main.site-main {
     margin-top: 0;
@@ -88,7 +165,6 @@ background-color: #30302f;
 }
 
 #content2.site-content {
-    background-color: #30302f;
     height: 40%;
     padding-left: 20%;
     padding-right: 20%;
@@ -123,6 +199,10 @@ background-color: #30302f;
 #design {
     display: inline-block;
 }
+
+/***** END OF MAIN PAGE *****/
+
+/*******************************************************************************************************/
 
 /***** CATALOG *****/
 
@@ -208,56 +288,3 @@ background-color: #30302f;
 }
 
 /***** END OF CATALOG *****/
-
-/***** FOOTER *****/
-
-/*color of the footer is black, no superposition*/
-#colophon {
-    background-color: white;
-    z-index: none;
-    clear: both;
-    display: flexbox;
-}
-
-/*this is where the company informations are displayed*/
-.site-info {
-    text-align: center;
-    color: black;
-}
-
-/*the footer menu*/
-#nav_menu-3 {
-    position: relative;
-    margin-left: 30%;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-    width:auto;
-    border-bottom-style: solid;
-    border-bottom-color: #808080;
-    border-bottom-width: 2px;
-}
-
-/*the pages titles*/
-#nav_menu-3 .menu-copy-color-menu-container ul li a {
-    color: black;
-}
-
-/*the pages titles*/
-#menu-copy-color-menu-1 li {
-    display: inline;
-    float: left;
-    width: 100px;
-}
-
-/*the subpages titles*/
-#menu-copy-color-menu-1 .sub-menu li {
-    display: block;
-    float: none;
-}
-
-/*the subpages titles*/
-#nav_menu-3 .menu-copy-color-menu-container ul li ul li a {
-    color: #808080;
-}
-
-/***** END OF FOOTER *****/

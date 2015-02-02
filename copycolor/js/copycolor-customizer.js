@@ -4,41 +4,51 @@
  * here. Your javascript should grab settings from customizer controls, and 
  * then make any necessary changes to the page using jQuery.
  */
-( function( $ ) {
+(function ($) {
 
-	// Update the header color in real time...
-	wp.customize( 'header_color', function( value ) {
-		value.bind( function( newval ) {
-			$( '#masthead.site-header' ).css( 'background-color', newval );
-		} );
-	} );
-	
-	//Update the logo in real time...
-	wp.customize( 'logo', function( value ) {
-		value.bind( function( newval ) {
-			$( '.site-description' ).html( newval );
-		} );
-	} );
+    /***** SITE TITLE *****/
 
-	//Update site title color in real time...
+    /***** COLORS *****/
+
+    // Update the header color in real time...
+    wp.customize('header_color', function (value) {
+        value.bind(function (newval) {
+            $('header').css('background-color', newval);
+        });
+    });
+
+    //Update site background color...
+    wp.customize( 'background_color', function( value ) {
+    value.bind( function( newval ) {
+    $('body').css('background-color', newval );
+    } );
+    } );
+
+    // Update the footer color in real time...
+    wp.customize('footer_color', function (value) {
+        value.bind(function (newval) {
+            $('#colophon').css('background-color', newval);
+        });
+    });
+
+    /***** COMPANY INFORMATIONS *****/
+
 	wp.customize( 'company_address', function( value ) {
 		value.bind( function( newval ) {
-			$('#site-title a').css('color', newval );
+			$( '.company_address' ).html( newval );
 		} );
 	} );
 
-	//Update site background color...
-	wp.customize( 'background_color', function( value ) {
+    wp.customize( 'company_phone', function( value ) {
 		value.bind( function( newval ) {
-			$('body').css('background-color', newval );
+			$( '.company_phone' ).html( newval );
 		} );
 	} );
-	
-	//Update site link color in real time...
-	wp.customize( 'link_textcolor', function( value ) {
+
+    wp.customize( 'company_email', function( value ) {
 		value.bind( function( newval ) {
-			$('a').css('color', newval );
+			$( '.company_email' ).html( newval );
 		} );
 	} );
-	
-} )( jQuery );
+
+})(jQuery);

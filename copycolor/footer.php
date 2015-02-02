@@ -14,29 +14,35 @@
 			<div class="site-info">
 
                 <!-- display company address: -->
-				<?php echo get_theme_mod('company_address'); ?>
-
-                <!-- display company phone: -->
                 <?php 
-                    if (get_theme_mod('company_phone') != ''):
+                if (get_theme_mod('company_address') != ''):
                 ?>
-                    <br>
-                    <?php echo get_theme_mod('company_phone');
-                    endif;
-                ?>
+                    <h6 class="company_address">
+				    <?php echo get_theme_mod('company_address'); ?>
+                    </h6>
+                    <?php
+                 endif;
 
-                <!-- display company email: -->
-                <?php 
-                    if (get_theme_mod('company_email') != ''):
-                ?>
-                    <br>
-                    <?php echo get_theme_mod('company_email');
-                    endif;
-                ?>
+                 // display company phone:
+                 if (get_theme_mod('company_phone') != ''):
+                 ?>
+                    <h6 class="company_phone">
+                    <?php echo get_theme_mod('company_phone');?>
+                    </h6>
+                    <?php
+                 endif;
 
-                <!-- display link to facebook page: -->
-                <?php 
-                    if (get_theme_mod('display_facebook_page') == TRUE):
+                 // display company email:
+                 if (get_theme_mod('company_email') != ''):
+                 ?>
+                    <h6 class="company_email">
+                    <?php echo get_theme_mod('company_email');?>
+                    </h6>
+                    <?php
+                 endif;
+
+                // display link to facebook page:
+                if (get_theme_mod('display_facebook_page') == TRUE):
                 ?>
                     <br>
                     <br>
