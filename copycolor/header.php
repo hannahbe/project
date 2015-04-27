@@ -25,6 +25,7 @@
 	    <!--[if lt IE 9]>
 	    <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	    <![endif]-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	    <?php wp_head(); ?>
     </head>
 

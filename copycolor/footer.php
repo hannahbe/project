@@ -42,16 +42,16 @@
                  endif;
 
                 // display link to facebook page:
-                if (get_theme_mod('display_facebook_page') == TRUE):
+                $visibility = ( TRUE == get_theme_mod('display_facebook_page') ) ? '' : 'hidden';
                 ?>
                     <br>
                     <br>
-                    <a href="<?php echo get_theme_mod('url_facebook_page'); ?>">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/images/facebook.jpg" alt="Print" width="30px">
-			        </a>
-                <?php 
-                    endif;
-                ?>
+                    <div id="fblink" class="<?php echo $visibility; ?>">
+                        <a href="<?php echo get_theme_mod('url_facebook_page'); ?>">
+                            <img src="<?php echo get_stylesheet_directory_uri() ?>/images/facebook.jpg" alt="Print" width="30px">
+			            </a>
+                    </div>
+                
             </div><!-- .site-info -->
 		</footer><!-- #colophon -->
 

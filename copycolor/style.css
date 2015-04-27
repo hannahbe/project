@@ -143,6 +143,11 @@ background-color: #30302f;
     color: #808080;
 }
 
+/*to hide the facebook icone*/
+.hidden {
+    display: none;
+}
+
 /***** END OF FOOTER *****/
 
 /*******************************************************************************************************/
@@ -155,22 +160,20 @@ background-color: #30302f;
     max-height: none;
 }
 
-#primary.content-area {
+#index-content {
     padding-top:  0;
 }
 
-#content.site-content {
+#content1 {
     display: flexbox;
     background-color: #94cecf;
+    margin-left: 0;
 }
 
-#content2.site-content {
+#content2 {
     height: 40%;
     padding-left: 20%;
     padding-right: 20%;
-}
-
-.site-content {
     margin-left: 0;
     display:  flexbox;
 }
@@ -288,3 +291,118 @@ background-color: #30302f;
 }
 
 /***** END OF CATALOG *****/
+
+/*******************************************************************************************************/
+
+/***** GALLERY *****/
+
+#primary {
+    padding-top: 150px;
+    width: 75%;
+    min-width: 1000px;
+    float: left;
+}
+
+#content-sidebar {
+    padding-top: 150px;
+    margin-right: 5%;
+    width: 20%;
+    min-width: 200px;
+    float: right;
+    position: static;
+}
+
+.content-sidebar .widget .widget-title {
+    border-top-style: none;
+    border-bottom: 2px solid #3F3F3F;
+    color: #3F3F3F;
+    text-transform: none;
+    font-size: 130%;
+}
+
+#content-sidebar li {
+    padding: 0;
+    border-top-style: none;
+}
+
+#content-sidebar li a {
+    color: #959595;
+    font-style: italic;
+    font-size: 110%;
+}
+
+#gallery-content {
+    display: table;
+    border-spacing: 5px;
+    margin-right: 0;
+    float: right;
+}
+
+.gallery-pictures-row {
+    display: table-row;
+    width: 100%;
+}
+
+.single-gallery-picture {
+    display: table-cell;
+    position: relative;
+}
+
+.single-gallery-picture img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+ 
+.single-gallery-picture figure {
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+	width: 300px;
+}
+
+.magenta figcaption {
+	background: rgba(255, 0, 255, 0.6);
+}
+
+.cyan figcaption {
+	background: rgba(0, 255, 255, 0.6);
+}
+
+.yellow figcaption {
+	background: rgba(255, 255, 0, 0.6);
+}
+ 
+.single-gallery-picture figcaption {
+    text-align: center;
+	color: white;
+	display: table;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 100;
+    -webkit-transition: all 300ms;
+	-moz-transition: all 300ms;
+	transition: all 300ms;
+	-webkit-transition-delay: 100ms;
+	-moz-transition-delay: 100ms;
+	transition-delay: 100ms;
+}
+ 
+.single-gallery-picture figcaption p {
+	display: table-cell;
+	font-size: 200%;
+    font-weight: bold;
+	position: relative;
+	width: 300px;
+	vertical-align: middle;
+}
+
+.single-gallery-picture:hover figcaption {
+	opacity: 1;
+}
+
+/***** END OF GALLERY *****/

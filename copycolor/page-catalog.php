@@ -1,6 +1,12 @@
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/newfunctions.js"></script>
  
 <?php
+    
+const CATALOG = '47';
+const CATALOG_PRINT = '128';
+const CATALOG_DESIGN = '130';
+const CATALOG_SUBLIMATION = '132';
+
 get_header();
 
 $page_object = get_queried_object();
@@ -8,31 +14,35 @@ $page_id = get_queried_object_id();
 
 //all next variables except $forward_image are initialized to the values on catalog -> print subpage
 $title = 'Print Products';                                  //will hold the title of the subpage
-$query_post = 'category_name=catalogprint';                 //will hold the query we will use to display the posts that are relevants to the subpage
-$back_link = '132';                                         //next subpage
-$forward_link = '130';                                      //previous subpage
+$query_post = 'category_name=print-catalog';                 //will hold the query we will use to display the posts that are relevants to the subpage
+$back_link = CATALOG_SUBLIMATION;                           //next subpage
+$forward_link = CATALOG_DESIGN;                             //previous subpage
 $forward_image = get_stylesheet_directory_uri().'/images/'; //will hold the forward arrow's url
 
 switch ($page_id) {
     //catalog page (by default, must show the print products)
-    case '47':  $forward_image = $forward_image.'forward-to-design.png';
+    case CATALOG:  
+                $forward_image = $forward_image.'forward-to-design.png';
                 break;
     //catalog -> print subpage
-    case '128': $forward_image= $forward_image.'forward-to-design.png';
+    case CATALOG_PRINT: 
+                $forward_image= $forward_image.'forward-to-design.png';
                 break;
     //catalog -> design subpage
-    case '130': $title = 'Design Products';
-                $query_post = 'category_name=catalogdesign';
+    case CATALOG_DESIGN: 
+                $title = 'Design Products';
+                $query_post = 'category_name=design-catalog';
                 $forward_image= $forward_image.'forward-to-sublimation.png';
-                $back_link ='128';
-                $forward_link = '132';
+                $back_link = CATALOG_PRINT;
+                $forward_link = CATALOG_SUBLIMATION;
                 break;
     //catalog -> sublimation subpage
-    case '132': $title = 'Sublimation Products';
-                $query_post = 'category_name=catalogsublimation';
+    case CATALOG_SUBLIMATION: 
+                $title = 'Sublimation Products';
+                $query_post = 'category_name=sublimation-catalog';
                 $forward_image= $forward_image.'forward-to-print.png';
-                $back_link ='130';
-                $forward_link = '128';
+                $back_link = CATALOG_DESIGN;
+                $forward_link = CATALOG_PRINT;
                 break;
     default:    break;
 }
@@ -60,28 +70,33 @@ switch ($page_id) {
             <?php
             query_posts($query_post);
             $i = 0;
-            while (have_posts()) : the_post();
+            if ( have_posts() ) : while (have_posts()) : the_post();
                 if ($i == 0):
             ?>
                     <div class="catalog-posts-row">
             <?php
                 endif;
             ?>
-        <div class="single-catalog-post">
+                <div class="single-catalog-post">
             <?php
             the_title( '<h2>', '</h2>' );
             the_content();
-            $i++;
-            if ($i == 3):
             ?>
                 </div><!-- .single-catalog-post -->
             <?php
+            $i++;
+            if ($i == 3):
+            ?>
+                </div><!-- .catalog-post-row -->
+            <?php
                 $i = 0;
                 endif;
+            endwhile; endif;
+            if ($i != 0):
             ?>
-        </div><!-- .catalog-post-row -->
-        <?php
-            endwhile;
+                </div><!-- .catalog-post-row -->
+            <?php
+            endif;
         ?>
     </div><!-- .catalog-posts -->
  
