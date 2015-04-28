@@ -10,6 +10,6 @@ require get_stylesheet_directory() . '/inc/widgets.php';
 require get_stylesheet_directory() . '/inc/gallery.php';
 
 //Add Admin menu functionality
-require get_stylesheet_directory() . '/inc/sublimation-menu.php';
+require get_stylesheet_directory() . '/inc/admin-menu.php';
 
 ?>
