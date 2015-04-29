@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Catalog Page
+*/
+?>
+
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/newfunctions.js"></script>
  
 <?php

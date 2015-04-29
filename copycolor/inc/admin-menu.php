@@ -244,6 +244,17 @@ function view_items ($typeOfService) {
 
     if (!empty($all_items)) {?>
 
+        <!-- script to disable/enable the button when checkboxes are unchecked/checked -->
+        <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $(".remove_checkbox").click(function(){
+                $('#remove_item').prop('disabled',$('input.remove_checkbox:checked').length == 0);
+            });
+        });
+        </script>
+        
+        <br/>
         <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
             <table>
 
@@ -253,7 +264,10 @@ function view_items ($typeOfService) {
                     ?><tr><?php   
                 }?>
                 <td>
-                <table>
+                <table 
+                    <?php if ($typeOfService == 'sublimation' || $typeOfService == 'print') { ?>
+                       style="border: 1px solid black; border-spacing: 10px"
+                    <?php } ?>>
                 <?php
                 if ($typeOfService == 'sublimation' || $typeOfService == 'print') {
                 ?>
@@ -291,7 +305,7 @@ function view_items ($typeOfService) {
                 ?>
                 <tr>
                     <td>
-                        <input type="checkbox" name="item_to_remove[]" value="<?php echo $item->id ?>">Select to remove the <?php echo $item_type ?>
+                        <input type="checkbox" class="remove_checkbox" name="item_to_remove[]" value="<?php echo $item->id ?>">Select to remove the <?php echo $item_type ?>
                     </td>
                 </tr>
             </table>
@@ -306,7 +320,7 @@ function view_items ($typeOfService) {
         </table>
         <br/>
         <br/>
-        <input type="submit" value="Remove <?php echo $item_type ?>s">
+        <input type="submit" id="remove_item" value="Remove <?php echo $item_type ?>s" disabled="disabled">
     </form>
 
     <?php
@@ -318,9 +332,4 @@ function view_items ($typeOfService) {
 
 }
 
-//function used in view_item to turn url into path so we can use "unlink" to delete files
-function url_to_path_test($url){
-    $url=str_replace(rtrim(get_site_url(),'/').'/', ABSPATH, $url);
-    return $url;
-}
 ?>
