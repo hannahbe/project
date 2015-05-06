@@ -6,8 +6,9 @@ Template Name: Print Service Window
 
 <?php
     require ("../../../wp-blog-header.php");    //so we can use wordpress' database
-    global $wpdb;
-    $product =  $wpdb->get_row('SELECT * FROM wp_products WHERE id = ' . $_GET['id']);
+    $pid = $_GET['id'];
+    $pname = get_product_name($pid);
+    $pprice = get_product_price($pid);
 ?>
 
 <!DOCTYPE html>
@@ -15,66 +16,77 @@ Template Name: Print Service Window
 
     <head>
         <meta charset="utf-8" />
-        <title><?php echo $product->name ?></title>
+        <title><?php echo $pname ?></title>
+        <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script type="text/javascript" src="js/window-print-service.js"></script>
     </head>
 
     <body>
 
-        <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-
-                // display another upload and quantity fields on click on "Add file"
-                $("input[value='Add file']").click(function (event) {
-                    event.preventDefault();
-                    var count = $(".input_file").length;
-                    $("label.input_file:last").clone().find('input').attr({
-                        'id' : 'input_file['+count+']',
-                        'name' : 'input_file['+count+']'
-                    }).val("").end().insertAfter("label.input_quantity:last");
-                    $("label.input_quantity:last").clone().find('input').attr({
-                        'id' : 'input_quantity['+count+']',
-                        'name'  :'input_quantity['+count+']'
-                    }).val("1").end().insertAfter("label.input_file:last");
-                    $('#remove_file').removeAttr('disabled');
-                });
-
-                // remove last upload and quantity fields on click on "Remove file"
-                $("input[value='Remove file']").click(function (event) {
-                    event.preventDefault();
-                    $("label.input_quantity:last").remove();
-                    $("label.input_file:last").remove();
-                    if (!canRemove())
-                        $('#remove_file').attr('disabled', true);
-                });
-
-                //return true if we can remove last upload and quantity fields (= if there are at least 2 upload fields)
-                function canRemove() {
-                    var remove = false;
-                    var e = document.getElementsByClassName("input_file");
-                    if (e.length > 1)
-                        remove = true;
-                    return remove;
-                }
-            });
-        </script>
-
         <?php
         if ('POST' == $_SERVER['REQUEST_METHOD']) {
+
+            //if the user already clicked on "Add to cart"
             if(isset($_POST['submit'])){
+                $allFilesEmpty = TRUE;
                 foreach ($_POST['input_quantity'] as $key=>$arr) {
-                    //upload file:
-                    $upload = wp_upload_bits($_FILES['input_file']['name'][$key], null, file_get_contents($_FILES['input_file']['tmp_name'][$key]));
-                    echo "Upload: " . $_FILES['input_file']["name"][$key] . "<br>";
+
+                    if ($_FILES['input_file']['size'][$key] != 0) {
+
+                        $allFilesEmpty = FALSE;
+                        $fileName = $_FILES['input_file']['name'][$key];
+                        $filePath = uploadToTemp($_FILES['input_file'],$key);   //upload file to a temporary directory
+
+                        if (!is_null($filePath)) {
+                            //if the value 'cart' doesn't exist yet in session:
+                            if(!array_key_exists('cart', $_SESSION))
+                                $_SESSION['cart'] = array();
+                            //if the user didn't enter any product of this kind in the cart yet:
+                            if (!array_key_exists($pid, $_SESSION['cart'])) {
+                                $_SESSION['cart'][$pid] = array();
+                                //$curr_product_in_cart = 0; 
+                            }  
+                            /*else
+                                $curr_product_in_cart = count($_SESSION['cart'][$pid]);
+
+                            $_SESSION['cart'][$pid][$curr_product_in_cart]['quantity'] = $arr;
+                            $_SESSION['cart'][$pid][$curr_product_in_cart]['filepath'] = $filePath;
+                            $_SESSION['cart'][$pid][$curr_product_in_cart]['filename'] = $fileName;*/
+                            $neworder = array (
+                                'quantity' => $arr,
+                                'filepath' => $filePath,
+                                'filename' => $fileName
+                            );
+                            array_push($_SESSION['cart'][$pid], $neworder);
+                            echo $pid . ' ' . count($_SESSION['cart'][$pid]);
+                            //$_SESSION['cart'][$pid][] = $neworder;
+
+                            echo '<br/>Uploaded file ' .  $fileName . ' added ' . $arr . ' time(s) to your cart.<br/>';
+                        }  
+                    }
                 }
+
+                if ($allFilesEmpty == TRUE) {
+                    echo "You didn't selected any file.<br/><br/>";
+                    ?><input type="button" onclick="javascript:history.back()" value="Go back">
+                    <?php
+                }
+
+                //else {
+                    $bla = show_cart_menu();
+                    if($bla == NULL)
+                        echo 'null';
+                    else echo $bla;
+                //}
             }
         }
 
+        //if the user didn't clicked yet on "Add to cart"
         else {
         ?>
 
-        <h2><?php echo $product->name ?></h2>
-        <h2><?php echo $product->price ?> shekels</h2>
+        <h2><?php echo $pname ?></h2>
+        <h2><?php echo $pprice ?> shekels</h2>
 
         <form name="upload_files" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
             <p>
@@ -86,7 +98,7 @@ Template Name: Print Service Window
                 <input type="button" value="Add file">
                 <input type="button" id="remove_file" value="Remove file" disabled="disabled">
                 <br/><br/>
-                <input type="submit" name="submit" value="Send order">
+                <input type="submit" id="submit_file" name="submit" value="Add to cart">
             </p>
         </form>
 

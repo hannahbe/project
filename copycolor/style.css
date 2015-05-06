@@ -298,8 +298,7 @@ background-color: #30302f;
 
 #primary {
     padding-top: 150px;
-    width: 75%;
-    min-width: 1000px;
+    width: 75%;    
     float: left;
 }
 
@@ -307,7 +306,7 @@ background-color: #30302f;
     padding-top: 150px;
     margin-right: 5%;
     width: 20%;
-    min-width: 200px;
+
     float: right;
     position: static;
 }

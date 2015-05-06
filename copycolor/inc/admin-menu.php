@@ -50,6 +50,7 @@ function add_background() {
     else { ?>
 
         <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
+            <br>
             <h2>Select a background: </h2>
             <input type="file" name="new_background" id="new_background" accept="image/*"/>
             <br><br>
@@ -58,9 +59,9 @@ function add_background() {
 
         <script type="text/javascript">
             document.getElementById("new_background").onchange = function() {
-            if(this.value) {
-                document.getElementById("add_background").disabled = false; 
-            }  
+                if(this.value) {
+                    document.getElementById("add_background").disabled = false; 
+                }  
             }
         </script>
 
@@ -172,7 +173,8 @@ function new_product ($typeOfProduct) {
                 function allFilled() {
                     var filled = true;
                     $('.required').each(function () {
-                        if ($(this).val() == '') filled = false;
+                        if ($(this).val() == '')
+                            filled = false;
                     });
                     return filled;
                 } 
@@ -180,6 +182,7 @@ function new_product ($typeOfProduct) {
         </script>
 
         <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
+            <br>
             Product Name:<br/>
             <input type="text" class="required" id="product_name" name="product_name"/></br>
             Product price:<br/>
@@ -231,7 +234,7 @@ function view_items ($typeOfService) {
                 $current = $wpdb->get_row("SELECT * FROM " .$table . " WHERE id = $remove[$i]");
                 $current_guid = $current->guid;
                 if ($current_guid != NULL) {
-                    unlink(url_to_path_test($current_guid));
+                    unlink(url_to_path($current_guid));
                 }
                 //remove from database
                 $wpdb->query("DELETE FROM " . $table . " WHERE id = $remove[$i]");

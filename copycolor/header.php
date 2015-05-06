@@ -41,6 +41,7 @@
 			    <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
 				    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 			    </nav>
+                <img src="<?php echo get_stylesheet_directory_uri()?>/images/cart.png" alt="cart">
 		    </div><!-- .header-main -->
 
 	    </header><!-- #masthead -->
