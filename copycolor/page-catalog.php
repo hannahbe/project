@@ -3,8 +3,6 @@
 Template Name: Catalog Page
 */
 ?>
-
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/newfunctions.js"></script>
  
 <?php
     
@@ -83,16 +81,23 @@ switch ($page_id) {
             <?php
                 endif;
             ?>
-                <div class="single-catalog-post">
+                <div class="single-catalog-post hide-img">
+               <div class="catalog-post-text">
             <?php
             the_title( '<h2>', '</h2>' );
             the_content();
             ?>
+                      
+                </br>
+                   </div>
+                <img src="<?php echo get_first_image(get_the_ID())?>" alt="<?php echo get_the_title(get_the_ID()); ?>"></img>
+  
                 </div><!-- .single-catalog-post -->
             <?php
             $i++;
             if ($i == 3):
             ?>
+                    
                 </div><!-- .catalog-post-row -->
             <?php
                 $i = 0;
@@ -107,6 +112,24 @@ switch ($page_id) {
     </div><!-- .catalog-posts -->
  
 </div><!-- .catalog-content -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var cell_width = 0.18 * window.innerWidth;
+        var cells = document.getElementsByClassName("single-catalog-post");
+        for (var i = 0; i < cells.length; i++) {
+            cells[i].getElementsByTagName("img")[1].style.width = (cell_width + "px");
+            cells[i].style.width = (cell_width + "px");
+        }
+    });
+    window.onload = function (e) {
+        var cells = document.getElementsByClassName("single-catalog-post");
+        for (var i = 0; i < cells.length; i++) {
+            var margin_bottom = cells[i].getElementsByTagName("img")[1].height;
+            cells[i].getElementsByClassName("catalog-post-text")[0].style.marginBottom = margin_bottom + "px";
+        }
+    }
+</script>
 
 <?php
 get_footer();

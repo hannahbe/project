@@ -5,7 +5,7 @@
  */
 ?>
 
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
@@ -29,6 +29,8 @@
 	    <?php wp_head(); ?>
     </head>
 
+    <?php const CART_ID = 208; ?>
+
     <body <?php body_class(); ?>>
     <div id="page">
 
@@ -36,12 +38,13 @@
 
 		    <div class="header-main">
                 <!-- Get the logo that user chose in customizer: -->
-                <img src="<?php echo get_theme_mod('logo'); ?>" alt="Copy Color Jerusalem">
+                <a href="index.php" title="Home"><img src="<?php echo get_theme_mod('logo'); ?>" alt="Copy Color Jerusalem"></a>
                 <!-- The primary menu: -->
 			    <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
 				    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+                    
 			    </nav>
-                <img src="<?php echo get_stylesheet_directory_uri()?>/images/cart.png" alt="cart">
+                <a href="<?php echo get_page_link(CART_ID); ?>" title="My cart"><img id="cart-logo" src="<?php echo get_stylesheet_directory_uri() ?>/images/cart.png" alt="Cart"></a>
 		    </div><!-- .header-main -->
 
 	    </header><!-- #masthead -->

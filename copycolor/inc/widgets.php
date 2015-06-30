@@ -4,7 +4,7 @@
 
 //exclude none and catalog category and subcategories from the categories widget
 function exclude_widget_categories($args){
-    $exclude = "1,22,23,24,25"; // The IDs of the excluding categories
+    $exclude = "1,22,23,24,25"; // The IDs of the excluding categories : None, Catalog, Catalog-Design, Catalog-Print, Catalog-Subimation
     $args["exclude"] = $exclude;
     return $args;
 }

@@ -23,6 +23,7 @@ get_header();
                     <div class="gallery-pictures-row">
             <?php
                 endif;
+                if (get_first_image(get_the_ID()) != NULL) {
             ?>
                 <div class="single-gallery-picture <?php gallery_hover_color(get_the_ID()); ?>">
 
@@ -35,6 +36,7 @@ get_header();
 
                 </div><!-- .single-gallery-picture -->
             <?php
+                }
                 $i++;
                 if ($i == 3):
                 ?>
@@ -54,6 +56,18 @@ get_header();
             </div><!-- #primary -->
 	<?php get_sidebar( 'content' ); ?>
 </div><!-- #main-content -->
+
+<script type="text/javascript">
+    window.onload = function (e) {
+        var cell_width = 0.23 * window.innerWidth;
+        var cells = document.getElementsByClassName("single-gallery-picture");
+        for (var i = 0; i < cells.length; i++) {
+            cells[i].getElementsByTagName("img")[0].style.width = (cell_width + "px");
+            cells[i].getElementsByTagName("figcaption")[0].style.height = cells[i].getElementsByTagName("img")[0].height + "px";
+            cells[i].getElementsByTagName("p")[0].style.width = (cell_width + "px");
+        }
+    }
+</script>
 
 <?php
 get_footer();

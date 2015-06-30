@@ -12,13 +12,12 @@
 
 @import url("../twentyfourteen/style.css");
 
-/*.admin-bar.masthead-fixed .site-header {
-		top: 0px;
-	}*/
+.admin-bar.masthead-fixed .site-header {
+    top: 0px;
+}
 
 html {
     background-color: white;
-    min-width: 1150px;
 }
 
 /***** HEADER *****/
@@ -27,36 +26,36 @@ html {
 #masthead.site-header {
     background-color: #30302f;
     max-width: none;
-    min-width: 1150px;
     margin: 0 0 0 0;
-    height: 70px;
-    vertical-align: middle;
-    position: absolute;
-    top: 32px;
+    height: 12vh;
+    position: relative;
+    display: block;
 }
 
 .header-main {
     margin: 0 auto;
-    width: 1000px;
+    width: 75vw;
 }
 
 /* logo on the left side of the header*/
-#masthead.site-header img {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    max-height: 50px;
+.header-main a img {
+    margin-top: 2vh;
+    height: 7vh;
     width: auto;
+}
+
+#cart-logo {
+    height: 5vh;
+    position: absolute;
+    right: 2vw;
+    top: 1.5vh;
 }
 
 /* center vertically the navigation */
 #masthead.site-header nav {
-   line-height: 70px;
+   line-height: 12vh;
+   font-size: 1.9vh;
 }
-
-/* subpages navigation 
-.primary-navigation ul li {
-background-color: #30302f;
-}*/
 
 .primary-navigation ul ul {
     background-color: #30302f;
@@ -67,7 +66,7 @@ background-color: #30302f;
 .primary-navigation li.focus > a,
 .primary-navigation ul ul a:hover,
 .primary-navigation ul ul li.focus > a {
-    border-bottom: 5px solid #00dbff;
+    border-bottom: 3px solid #00dbff;
     background-color: #30302f;
 }
 
@@ -105,15 +104,15 @@ background-color: #30302f;
     font-family: "Lato";
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 1.8vh;
 }
 
 /*the footer menu*/
 #nav_menu-3 {
-    position: relative;
-    margin-left: 30%;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    font-size: 1.8vh;
+    position: static;
+    margin-left: 30vw;
+    padding-bottom: 5vh;
     width:auto;
     border-bottom-style: solid;
     border-bottom-color: #808080;
@@ -129,13 +128,18 @@ background-color: #30302f;
 #menu-copy-color-menu-1 li {
     display: inline;
     float: left;
-    width: 100px;
+    width: 7vw;
 }
 
 /*the subpages titles*/
 #menu-copy-color-menu-1 .sub-menu li {
     display: block;
     float: none;
+}
+
+/*the subpages titles must be aligned with page title*/
+.widget li > ol, .widget li > ul {
+    margin-left: 0;
 }
 
 /*the subpages titles*/
@@ -148,6 +152,10 @@ background-color: #30302f;
     display: none;
 }
 
+#fblink a img{
+    width: 5vh;
+}
+
 /***** END OF FOOTER *****/
 
 /*******************************************************************************************************/
@@ -158,6 +166,8 @@ background-color: #30302f;
     margin-top: 0;
     width: 100%;
     max-height: none;
+    position: relative;
+    display: block;
 }
 
 #index-content {
@@ -171,7 +181,6 @@ background-color: #30302f;
 }
 
 #content2 {
-    height: 40%;
     padding-left: 20%;
     padding-right: 20%;
     margin-left: 0;
@@ -189,6 +198,7 @@ background-color: #30302f;
     display: block;
     margin: auto;
     margin-top: 15%;
+    margin-bottom: 15%;
 }
 
 #print {
@@ -210,8 +220,11 @@ background-color: #30302f;
 /***** CATALOG *****/
 
 .move-to-section {
-    margin-top: 350px;
-    min-width: 150px;
+    margin-top: 40vh;
+}
+
+.move-to-section img {
+    height: 11vw;
 }
 
 #back-to-section {
@@ -227,34 +240,31 @@ background-color: #30302f;
 }
 
 .catalog-content {
-    padding-top: 50px;
-    min-height: 500px;
+    padding-top: 12vh;
+    min-height: 70vh;
     max-height: none;
-    margin: auto;
-    width: 850px;
+    margin-left: 20vw;
+    width: 60vw;
 }
 
 .catalog-section {
-    margin-top: 50px;
-    margin-left: 20px;
+    margin-left: 1.5vw;
     vertical-align: middle;
     display: table;
     width: 100%;
 }
 
 .catalog-section h1{
-    width: 850px;
     margin: 0;
     vertical-align: middle;
-    display: table-cell;
-    font-size: 400%;
+    font-size: 8vh;
     color: #30302f;
 }
 
 .catalog-posts {
     max-height: none;
     display: table;
-    border-spacing: 20px;
+    border-spacing: 1.5vw;
     border-collapse: separate;
 }
 
@@ -263,31 +273,39 @@ background-color: #30302f;
 }
 
 .single-catalog-post {
-    padding: 10px;
+    padding-top: 1.5vw;
     display: table-cell;
+    position: relative;
     border-color: #ebebeb;
     border-width: 2px;
     border-style: double;
+}
+
+.hide-img p img {
+    display: none;
 }
 
 .single-catalog-post h2 {
     color: #308568;
     margin: 0;
     font-size: 100%;
+    padding-right: 1.5vw;
+    padding-left: 1.5vw;
 }
 
 .single-catalog-post p {
+    padding-right: 1.5vw;
+    padding-left: 1.5vw;
     color: black;
     text-align: left;
     margin: 0;
-    margin-top: 15px;
+    margin-top: 2vh;
     font-size: 80%;
 }
 
 .single-catalog-post img {
-    max-height: 150px;
-    width: auto;
-    max-width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 /***** END OF CATALOG *****/
@@ -297,16 +315,15 @@ background-color: #30302f;
 /***** GALLERY *****/
 
 #primary {
-    padding-top: 150px;
-    width: 75%;    
+    padding-top: 6vw;
+    width: 81%;    
     float: left;
 }
 
 #content-sidebar {
-    padding-top: 150px;
-    margin-right: 5%;
-    width: 20%;
-
+    padding-top: 6.5vw;
+    margin-right: 6vw;
+    width: 15%;
     float: right;
     position: static;
 }
@@ -316,7 +333,7 @@ background-color: #30302f;
     border-bottom: 2px solid #3F3F3F;
     color: #3F3F3F;
     text-transform: none;
-    font-size: 130%;
+    font-size: 3vh;
 }
 
 #content-sidebar li {
@@ -327,13 +344,14 @@ background-color: #30302f;
 #content-sidebar li a {
     color: #959595;
     font-style: italic;
-    font-size: 110%;
+    font-size: 2.5vh;
 }
 
 #gallery-content {
     display: table;
-    border-spacing: 5px;
-    margin-right: 0;
+    border-spacing: 0.5vw;
+    margin-right: 2vw;
+    margin-left: 6vw;
     float: right;
 }
 
@@ -345,6 +363,7 @@ background-color: #30302f;
 .single-gallery-picture {
     display: table-cell;
     position: relative;
+    vertical-align: middle;
 }
 
 .single-gallery-picture img {
@@ -354,10 +373,8 @@ background-color: #30302f;
 }
  
 .single-gallery-picture figure {
-	height: 200px;
 	overflow: hidden;
 	position: relative;
-	width: 300px;
 }
 
 .magenta figcaption {
@@ -376,7 +393,6 @@ background-color: #30302f;
     text-align: center;
 	color: white;
 	display: table;
-	height: 100%;
 	left: 0;
 	opacity: 0;
 	position: absolute;
@@ -393,10 +409,9 @@ background-color: #30302f;
  
 .single-gallery-picture figcaption p {
 	display: table-cell;
-	font-size: 200%;
+	font-size: 6vh;
     font-weight: bold;
 	position: relative;
-	width: 300px;
 	vertical-align: middle;
 }
 
@@ -404,4 +419,719 @@ background-color: #30302f;
 	opacity: 1;
 }
 
-/***** END OF GALLERY *****/
+/*****     END OF GALLERY     *****/
+
+/*******************************************************************************************************/
+
+/*****     CART     *****/
+
+#cart-div #save-or-send {
+    width: 10vw;
+    vertical-align: middle;
+}
+
+#cart-div #choose-quantity {
+    width: 60vw;
+}
+
+#sub-cart table {
+    background-color: #f2e6ac;
+}
+
+#print-cart table {
+    background-color: #e2b3e9;
+}
+
+#print-cart .td-icon img {
+    max-width: 100%;
+}
+
+#sub-cart .td-icon img {
+    width: 90%;
+}
+
+#sub-cart .td-design img {
+    width: 65%;
+}
+
+/*****     SERVICE AND CART     *****/
+
+.cart-table {
+    table-layout: fixed;
+    border: none;
+    border-right: 2px solid #2f2f2e;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.cart-table th {
+    background-color: #2f2f2e;
+    text-align: center;
+    color: white;
+    border: none;
+    font-size: 1.8vw;
+}
+
+.cart-table td {
+    text-align: center;
+    font-weight: 600;
+    border: none;
+    font-size: 1.5vw;
+    vertical-align: middle;
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cart-table td input[type="number"] {
+    width : 90%;
+    background-color: #2f2f2e;
+    color: white;
+    margin : auto;
+}
+
+.td-icon {
+    padding-top: 1.2vh;
+}
+
+.print-service .td-icon img {
+    max-width: 100%;
+}
+
+.sublimation-service .td-icon img {
+    width: 90%;
+}
+
+.td-icon img {
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.sublimation-service .td-design img {
+    width: 75%;
+}
+
+.td-design img {
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.border {
+    height: 2px;
+    background-color: #2f2f2e;
+}
+
+.service-bar {
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.service-bar-content {
+    width: 70%;
+    margin: auto;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.service-bar-content h1 {
+    float: left;
+    vertical-align: bottom;
+    margin: 0;
+    margin-top: 4%;
+    font-size: 6vh;
+}
+
+.service-bar-content img {
+    height: 10%;
+    width: auto;
+    float: left;
+    margin-top: 3%;
+    margin-left: 10%;
+}
+
+img.not-current-step {
+   -webkit-filter: invert(1);
+   filter: invert(0.35);
+}
+
+#service-table {
+    table-layout: fixed;
+    width: 33%;
+    margin: auto;
+    margin-top: 7%;
+    padding-bottom: 7%;
+    border: none;
+}
+
+#service-table tr td {
+    padding-top: 5px;
+    text-align: center;
+    vertical-align: central;
+    border: none;
+}
+
+td.service-name {
+    padding-bottom: 5px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+a {
+    color: transparent;
+}
+
+.spacer {
+    height: 10px;
+}
+
+input[type="button"].copycolor-button.order {
+    font-size: 1vw;
+}
+
+.copycolor-button, input[type="submit"].copycolor-button, input[type="button"].copycolor-button {
+    background-color: #2f2f2e;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.8vw;
+    padding: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-align: center;
+    border-radius: 0;
+    display: block;
+    margin: auto;
+}
+
+.copycolor-button:hover, input[type="submit"].copycolor-button:hover, input[type="button"].copycolor-button:hover {
+    background-color: #2f2f2e;
+    color: white;
+}
+
+#client-data {
+    width: 25vw;
+    padding-left: 1.5vw;
+    padding-right: 3.5vw;
+}
+
+#client-data table {
+    border: none;
+}
+
+#client-data table td, #client-data table td input {
+    border: none;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.8vw;
+    font-weight: 600;
+    background-color: #2f2f2e;
+    color: white;
+    width: 100%;
+    text-align: right;
+    padding-bottom: 0;
+    vertical-align: baseline;
+}
+
+#client-data .spacer {
+    height: 3vw;
+    background-color: transparent;
+}
+
+#order-container {
+    display: table;
+    margin-top: 5vh;
+}
+
+.order-content {
+    display: table-cell;
+}
+
+#save-or-send button{
+    display: block;
+    margin: auto;
+}
+
+#order-price {
+    width: 20vw;
+    text-align: right;
+    border-bottom: 2px solid #2f2f2e;
+}
+
+#order-price h5 {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 2.5vw;
+    font-weight: 600;
+    background-color: #2f2f2e;
+    border-collapse: collapse;
+    display: inline-block;
+    color: white;
+    margin: 0;
+}
+
+.hidden_input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    padding: 0;
+    border: none;
+}
+
+/*****     PRINT SERVICE     ******/
+
+.print-service {
+    background-color: #e2b3e9;
+    padding-bottom: 8vh;
+}
+
+.print-step2 {
+    min-height: 50vh;
+    padding-top: 15vh;
+    vertical-align: middle;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 22px;
+}
+
+.print-step2 input[type="submit"] {
+    background-color: #2f2f2e;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 22px;
+    padding: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-align: center;
+    border-radius: 0;
+}
+
+#arrow {
+    margin-top: 7vh;
+    margin-bottom: 15px;
+}
+
+#print-table {
+    table-layout: fixed;
+    width: 50%;
+    margin: auto;
+    margin-top: 7vh;
+    padding-bottom: 10vh;
+    border: none;
+    border-spacing: 2px 0;
+}
+
+#print-table td {
+    border: none;
+    text-align: center;
+    padding-top: 5px;
+    vertical-align: central;
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#print-table td button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+#print-table td span {
+    font-size: 1vw;
+}
+
+.print-uploads-next {
+    padding-bottom: 7vh;
+}
+
+.print-options table {
+    table-layout: fixed;
+    width: 70%;
+    margin: auto;
+    border: none;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.8vw;
+    padding-bottom: 10vh;
+}
+
+.print-options table td {
+    border: none;
+    font-weight: 900;
+    text-align: center;
+    overflow: hidden;
+}
+
+.print-options table td select {
+    background: url('images/buttons/white-arrow.png') no-repeat right 0.5vw center #2f2f2e;
+    background-size: 1.5vw;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.8vw;
+    font-weight: 900;
+    text-align: center;
+    padding-right: 2.5vw;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.print-options table td select[disabled] {
+    color: #808080;
+}
+
+.print-service #save-or-send {
+    width: 10vw;
+    vertical-align: middle;
+}
+
+.print-service #choose-quantity {
+    width: 60vw;
+}
+
+/*****     END OF PRINT SERVICE     ******/
+
+/*****     SUBLIMATION-SERVICE     *****/
+
+.sublimation-service {
+   background-color: #f2e6ac;
+   padding-bottom: 8vh;
+}
+
+#designer-toolbar {
+    background-color: black;
+    width: 70vw;
+    margin: auto;
+    height: 8vh;
+}
+
+#designer-toolbar table {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#designer-toolbar table tr td {
+    text-align: center;
+    border: none;
+    padding-top: 1.2vh;
+}
+
+#designer-toolbar table tr td img {
+    height: 4.5vh;
+}
+
+/* font-family */
+#designer-toolbar tbody tr:first-child td:nth-child(4) {
+    max-width: 70px;
+    padding-right: 10px;
+}
+
+#designer-toolbar table tr td select {
+    background-color: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    margin-top: 5%;
+}
+
+/* font-size */
+#designer-toolbar tbody tr:first-child td:nth-child(5) {
+    max-width: 30px;
+}
+
+#designer-toolbar tbody tr:first-child td:nth-child(5) input {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: white;
+    width: 100%;
+}
+
+/* the form to add text */
+.add-edit-text {
+    background-color: black;
+    width: 60vw;
+    margin: auto;
+    padding: 0.2vw;
+    display: none;
+}
+
+.add-edit-text input[type="text"] {
+    width: 51vw;
+    font-size: 1.2vw;
+}
+
+.add-edit-text input[type="button"] {
+    width: 8.6vw;
+    float: right;
+    font-size: 0.9vw;
+}
+
+*::-moz-selection {
+    background-color: #808080;
+}
+
+.add-edit-text input[type="button"] {
+    background-color: #808080;
+}
+
+/* designer-container contain sidebar, online designer and preview */
+#designer-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* designer-content: all 3 div in designer-container */
+.designer-content {
+    float: left;
+}
+
+#designer-sidebar {
+    width: 15vw;
+    margin-bottom: 10vh;
+}
+
+#designer-sidebar table {
+    margin-top: 4vh;
+    border: none;
+}
+
+#designer-sidebar table tr td {
+    border: none;
+    vertical-align: middle;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 140%;
+    font-weight: 900;
+    color: black;
+}
+
+#designer-sidebar .icon {
+    width: 13vw;
+}
+
+#designer-sidebar table tr td img {
+    display: block;
+    margin: auto;
+}
+
+#designer-sidebar button {
+    display: block;
+    margin: auto;
+}
+
+#save-canvas-form input[type="image"] {
+    display: block;
+    margin: auto;
+    border: 2px solid black;
+}
+
+#designer-online {
+    padding-top: 5%;
+    padding-bottom: 10%;
+    width: 45vw;
+}
+
+#designer-preview {
+    padding-top: 5%;
+    width: 25vw;
+}
+
+#preview-canvas {
+    width: 90%;
+    margin: auto;
+}
+
+#designer-canvas {
+    max-width: 90%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#tooltip-canvas {
+    background-color: white;
+    border:1px solid black;
+    border-radius: 5%;
+    position:absolute;
+    left:-200px;
+    top:100px;
+}
+
+#cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5); 
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+/* the overlay special backgrounds screen */
+#background-screen {
+    width:80%;
+    max-height: 58vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    position:fixed;
+    z-index:10;
+    display:none;
+    background-color: White;
+    box-shadow: 5px 5px 5px black;
+}
+
+#background-screen:target,  #background-screen:target + #cover {
+    display:block;
+    opacity:2;
+}
+
+#background-screen-bar {
+    background-color: #30302f;
+}
+
+#background-screen-bar-left {
+    height: 100%;
+    float: left;
+}
+
+#background-screen-bar-left h2 {
+    margin: 0;
+    margin-top: 5%;
+    margin-left: 15%;
+    font-size: 4vh;
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+}
+
+#background-screen-bar-right {
+    height: 100%;
+    float: right;
+}
+
+#background-screen-bar-right img {
+    height: 80%;
+    margin-top: 10%;
+}
+
+#bg-table-div {
+    overflow-y: auto;
+    max-height: 40vh;
+    margin-left: 2vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+#backgrounds-designer-table {
+    width: 93%;
+    border: none;
+    margin-top: 1vw;
+}
+
+#backgrounds-designer-table tr td {
+    width: 15%;
+    height: 15%;
+    border: none;
+    padding-bottom: 3vw;
+    padding-right: 3vw;
+}
+
+#backgrounds-designer-table tr td img {
+    width: 100%;
+}
+
+#backgrounds-designer-table tr td label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+
+#backgrounds-designer-table tr td label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+
+#backgrounds-designer-table tr td label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid blue;
+}
+
+.sublimation-service #save-or-send {
+    width: 25vw;
+    vertical-align: middle;
+}
+
+.sublimation-service #choose-quantity {
+    width: 45vw;
+}
+
+/***** END OF SUBLIMATION-SERVICE *****/
+
+/*******************************************************************************************************/
+
+/***** ABOUT *****/
+
+#about-main {
+    background-color: #f3eeea;
+}
+
+#about-us {
+    padding-top: 5%;
+}
+
+#about-article {
+    display: inline;
+    float: left;
+    width: 30vw;
+    padding-right: 5vw;
+    padding-left: 15vw;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.2vw;
+    text-align: right;
+}
+
+#about-article h2 {
+    margin-top: 0;
+    color: #63605b;
+    border-bottom: 1px solid #63605b;
+    font-size: 2.2vw;
+}
+
+#about-us-img {
+    display: inline;
+    float: right;
+    width: 50vw;
+}
+
+#about-us-img img {
+    width: 100%;
+    height: auto;
+}
+
+#about-workers {
+    padding-top: 8%;
+    padding-bottom: 11%;
+}
+
+#about-workers table {
+    border: none;
+    width: 50%;
+    margin-left: 22%;
+}
+
+#about-workers table td {
+    border: none;
+    text-align: right;
+    font-weight: 900;
+}
+
+#about-workers table td img {
+    border-radius: 50%;
+    border: 4px solid black;
+    margin-top: 7%;
+    margin-bottom: 4%;
+}
+
+#about-workers table td.worker-job {
+    color: #54928d;
+}
+
+/***** END OF ABOUT *****/

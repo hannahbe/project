@@ -48,7 +48,7 @@
                     <br>
                     <div id="fblink" class="<?php echo $visibility; ?>">
                         <a href="<?php echo get_theme_mod('url_facebook_page'); ?>">
-                            <img src="<?php echo get_stylesheet_directory_uri() ?>/images/facebook.jpg" alt="Print" width="30px">
+                            <img src="<?php echo get_stylesheet_directory_uri() ?>/images/facebook.jpg" alt="Print">
 			            </a>
                     </div>
                 

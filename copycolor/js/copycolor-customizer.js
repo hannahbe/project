@@ -21,6 +21,7 @@
     wp.customize('header_color', function (value) {
         value.bind(function (newval) {
             $('header').css('background-color', newval);
+            $('#content2').css('background-color', newval);
         });
     });
 

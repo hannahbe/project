@@ -6,8 +6,8 @@ require get_stylesheet_directory() . '/inc/customizer.php';
 //Add Widgets functionality
 require get_stylesheet_directory() . '/inc/widgets.php';
 
-//Add Gallery functionality
-require get_stylesheet_directory() . '/inc/gallery.php';
+//Add Catalog and Gallery functionality
+require get_stylesheet_directory() . '/inc/catalog-gallery.php';
 
 //Add Admin menu functionality
 require get_stylesheet_directory() . '/inc/admin-menu.php';
@@ -18,62 +18,33 @@ require get_stylesheet_directory() . '/inc/cart.php';
 //Add Database functionality
 require get_stylesheet_directory() . '/inc/database.php';
 
-//function to pass id as parameter in url
-function add_custom_query_var( $vars ){
-  $vars[] = 'id';
-  return $vars;
-}
+//Add Files-updload functionality
+require get_stylesheet_directory() . '/inc/files-upload.php';
 
-add_filter( 'query_vars', 'add_custom_query_var');
+//Add Service functionality
+require get_stylesheet_directory() . '/inc/service.php';
 
-//function used in view_item to turn url into path
-function url_to_path($url){
-    $url=str_replace(rtrim(get_site_url(),'/').'/', ABSPATH, $url);
-    return $url;
-}
+//Add PDF Invoice functionality
+require get_stylesheet_directory() . '/inc/invoice.php';
 
-//SESSION
-add_action('init', 'myStartSession', 1);
-add_action('wp_logout', 'myEndSession');
-add_action('wp_login', 'myEndSession');
+// echo the 3 images (print design sublimation) displayed in home page and services pages
+function echoBeforeFooter() {
 
-function myStartSession() {
-    if(!session_id()) {
-        session_start();
-    }
-}
+    echo '<div id="content2" style="background-color:' . get_theme_mod("header_color") . '">'; // the color of this div is the same as the header
+        
+        echo '<div id="print" class="pds">';
+            echo '<img src="' . get_stylesheet_directory_uri() . '/images/print.png" alt="Print" width="60%">';
+        echo '</div>'; // #print
 
-function myEndSession() {
-    session_destroy ();
-}
+        echo '<div id="design" class="pds">';
+            echo '<img src="' . get_stylesheet_directory_uri() . '/images/design.png" alt="Design" width="60%">';
+        echo '</div>'; // #design
 
-//upload the file n° $fileNumber of $files
-function uploadToTemp($files, $fileNumber) {
+        echo '<div id="sublimation" class="pds">';
+            echo '<img src="' . get_stylesheet_directory_uri() . '/images/sublimation.png" alt="Sublimation" width="60%">';
+        echo '</div>'; // #sublimation
 
-    $uploadfolder =  url_to_path(WP_CONTENT_URL . '/uploads/temp');  //the temp folder url
-    $fileName = uniqid();
-    $extension = explode ('.', $files['name'][$fileNumber]);
-    $n = count($extension) - 1;
-    $extension = $extension[$n];
-
-    $filePath = $uploadfolder . '/' . $fileName . '.' . $extension;
-
-    //assure that we created a file name that doesn't already exist
-    while (file_exists($filePath)) {
-        $fileName = uniqid();
-        $filePath = $uploadfolder . '/' . $fileName . '.' . $extension;
-    }
-
-    if (!is_dir($uploadfolder) && !mkdir($uploadfolder, 0777)) {
-        echo 'Error creating folder, please try again';
-        return NULL;
-    }
-
-    if (move_uploaded_file($files['tmp_name'][$fileNumber], $filePath)) {
-        return $filePath;
-    }
-
-    return NULL;
+    echo '</div>'; // #content2
 }
 
 ?>
