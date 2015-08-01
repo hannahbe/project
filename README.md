@@ -35,29 +35,31 @@ List of files and folders:
 
 - images: all permanent images used for the website, such as the company logo, the button, etc...
 
-inc:- collections of functions relative to the theme's functionality.
-	- tcpdf (folder): TCPDF is a free software for generating PDF documents without requiring external extensions.
-	- admin-menu.php: a collection of functions relative to the admin screen functionalities. theme security - removal of pages deletion (only for the page I created to avoid a situation where a worker would damage the website by removing a critical page) - , new special screens - add print and sublimation products, view orders, etc... - , etc...
-	- cart.php: a collection of functions relative to the client's cart. using php session.
-	- catalog-gallery.php : functions relative to the catalog and the gallery - posts display
-	- customizer.php: remove and add customize options to the theme's customizer - choice of background color, logo, etc... -
-	- database.php : the database layer. function to remove, add, read from the database
-	- files-upload.php: functions to sanitize and save files inputs.
-	- invoice.php: functions to create pdf invoices. using tcpdf
-	- service.php: collection of functions relative to service print and service sublimation - products display etc... -
-	- widgets.php: functions to suit the widgets to the company needs.
+inc:
+- collections of functions relative to the theme's functionality.
+- tcpdf (folder): TCPDF is a free software for generating PDF documents without requiring external extensions.
+- admin-menu.php: a collection of functions relative to the admin screen functionalities. theme security - removal of pages deletion (only for the page I created to avoid a situation where a worker would damage the website by removing a critical page) - , new special screens - add print and sublimation products, view orders, etc... - , etc...
+- cart.php: a collection of functions relative to the client's cart. using php session.
+- catalog-gallery.php : functions relative to the catalog and the gallery - posts display
+- customizer.php: remove and add customize options to the theme's customizer - choice of background color, logo, etc... -
+- database.php : the database layer. function to remove, add, read from the database
+- files-upload.php: functions to sanitize and save files inputs.
+- invoice.php: functions to create pdf invoices. using tcpdf
+- service.php: collection of functions relative to service print and service sublimation - products display etc... -
+- widgets.php: functions to suit the widgets to the company needs.
 	
-js: - collections of js functions adding functionalities to both sides - admin screens and blog.
-	- add-sub.js : globals and functions used in the "Add Sublimation Product" admin screen. SubArea class - the area in the product image the design will be diplayed on.
-	- copycolor-customizer.js : add live preview to the customizer.
-	- online-designer.js : collection of functions relative to the online designer - globals, mousedown, mouseup, mousemove, keydown listeners, history parser, etc...
-	- online-designer-classes.js : CanvasHistory - holds the client's moves in 2 arrays undo and redo -, TextItem - a text in the design, can be rotated, resized, etc -, ImageItem - an image in the design, can be rotated, resized, etc -
-	- service-final-step.js : relative to the last screen of print and sublimation screens and the cart - total price changes when the client changes a product quantity etc...
-	- service-icons.js : relative to print and sublimation service icons display
-	- service-print.js : functionalities relative to the files upload screen in print service
+js:
+- collections of js functions adding functionalities to both sides - admin screens and blog.
+- add-sub.js : globals and functions used in the "Add Sublimation Product" admin screen. SubArea class - the area in the product image the design will be diplayed on.
+- copycolor-customizer.js : add live preview to the customizer.
+- online-designer.js : collection of functions relative to the online designer - globals, mousedown, mouseup, mousemove, keydown listeners, history parser, etc...
+- online-designer-classes.js : CanvasHistory - holds the client's moves in 2 arrays undo and redo -, TextItem - a text in the design, can be rotated, resized, etc -, ImageItem - an image in the design, can be rotated, resized, etc -
+- service-final-step.js : relative to the last screen of print and sublimation screens and the cart - total price changes when the client changes a product quantity etc...
+- service-icons.js : relative to print and sublimation service icons display
+- service-print.js : functionalities relative to the files upload screen in print service
 	
 tests :
-	- carttest.php : tests for the cart. change $PHP_SESSION for an array $SESSION to simulate the functions relative to cart and test their behaviour.
+- carttest.php : tests for the cart. change $PHP_SESSION for an array $SESSION to simulate the functions relative to cart and test their behaviour.
 	
 - footer.php : the footer
 - functions.php : includes all the files from folder "inc" (collection of functions relative to the theme). is loaded along with the parent theme functions.php file (and not instead of)
